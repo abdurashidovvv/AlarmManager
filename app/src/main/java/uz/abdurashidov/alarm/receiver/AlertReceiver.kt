@@ -8,5 +8,9 @@ class AlertReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
 
+
+        val notificationHelper = NotificationHelper(context)
+        val notificationCompatBuilder = notificationHelper.getChannelNotification()
+        notificationHelper.getManager().notify(1, notificationCompatBuilder.build())
     }
 }
